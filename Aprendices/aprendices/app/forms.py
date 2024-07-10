@@ -1,7 +1,7 @@
 from django import forms
-from .import models
+from .models import Aprendiz
 
 class Aprendizform(forms.ModelForm):
-    class meta:
-        models = models.Aprendiz
+    class Meta:
+        model = Aprendiz
         fields = '__all__'

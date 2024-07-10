@@ -2,7 +2,8 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>SENA</title>
+
+        <title>{% block titulo %} Sena {% endblock %}</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -18,21 +19,40 @@
             crossorigin="anonymous"/>
         <link rel="stylesheet" href="{% static 'css/principal.css' %}">
     </head>
+    
 
     <body>
         <header>
             <h1>SENA</h1>
+            <ul
+                class="nav justify-content-center  "
+            >
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'principal' %}" aria-current="page"
+                        >INICIO</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'aprendices' %}">APRENDICES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'agregar' %}">AGREGAR</a>
+                </li>
+            </ul>
+            
             <img src="{% static 'img/logo.png' %}" alt="">
             <!-- place navbar here -->
-            
-            
-        </header>
+        {% block contend %}
+            </header>
         
+        <strong><h1>Quienes somos</h1></strong>
+        <p>Somos un establecimiento público del orden Nacional y con autonomía administrativa, adscrito al Ministerio del Trabajo.</p>
+        <section>
+            <video style="border: solid 10px greenyellow" src="{% static 'vid/video.mp4' %}" controls></video>
+        </section>
+        {% endblock %}
+
         
-        <footer>
-            <!-- place footer here -->
-            
-        </footer>
         <!-- Bootstrap JavaScript Libraries -->
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -45,5 +65,10 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
+        
+        <footer><p>
+            DERECHOS RESERVADOS
+        </p></footer>
+
     </body>
 </html>

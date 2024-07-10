@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGREGAR</title>
+</head>
+<body>
+    <h1>DATOS</h1>
+<form method="POST">
+    {% csrf_token %}
+    {% for a in form %}
+    <div class="mb-3">
+        <label for="" class="form-label">{{a.label}}</label>
+        <input
+            type="{{a.field.widget.input_type}}"
+            class="form-control"
+            name="{{a.name}}"
+            id=""
+            aria-describedby="helpId"
+            placeholder="{{a.label}}"
+            value="{{a.value | default:''}}"
+        />
+        <small id="helpId" class="form-text text-muted"></small>
+    </div>
+    <div class="'col-12 help-text">{{a.error}}</div>
+    {% endfor %}
+    <input
+        name=""
+        id=""
+        class="btn btn-success"
+        type="submit"
+        value="Enviar"
+    />
+    <a
+        name=""
+        id=""
+        class="btn btn-primary"
+        href="{% url 'aprendices' %}"
+        role="button"
+        >Cancelar</a
+    >
+    
+    
+    
+    
+    
+    
+</form>
+</body>
+</html>
