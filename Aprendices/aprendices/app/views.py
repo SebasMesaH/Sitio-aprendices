@@ -22,7 +22,7 @@ def agregar(request):
         if form.is_valid():
             print(form.cleaned_data)
             form.save()
-            return redirect('principal')
+            return redirect('aprendices')
         else:
             print(form.errors)
     else:

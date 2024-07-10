@@ -1,3 +1,4 @@
+{% extends "principal.html" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,7 @@
     <title>AGREGAR</title>
 </head>
 <body>
+    {% block content %}
     <h1>DATOS</h1>
 <form method="POST">
     {% csrf_token %}
@@ -40,7 +42,7 @@
         role="button"
         >Cancelar</a
     >
-    
+    {% endblock %}
     
     
     
