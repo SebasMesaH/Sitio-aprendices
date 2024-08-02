@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponse
 from .forms import Aprendizform
 from .models import Aprendiz
-from. import models
+from .import models
 
 # Create your views here.
 
